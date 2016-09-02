@@ -2,7 +2,7 @@
 
 This is a backport package that allows Laravel-ActivityLog to work with PHP 5.6.  By design the namespace of the original project has been left untouched `Spatie\Activitylog`.  This allows for full use of the documentation with only minor modifications:
 
-### Installation_
+### Installation
 Change
 ``` bash
 composer require spatie/laravel-activitylog
@@ -123,6 +123,16 @@ Next, you must install the service provider:
 'providers' => [
     ...
     Spatie\Activitylog\ActivitylogServiceProvider::class,
+];
+```
+
+And you must register the facade:
+
+```php
+// config/app.php
+'aliases' => [
+    ...
+    'Activity' => Spatie\Activitylog\ActivitylogFacade::class,
 ];
 ```
 
