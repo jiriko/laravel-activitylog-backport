@@ -7,7 +7,11 @@ use Spatie\Activitylog\Models\Activity;
 
 class InvalidConfiguration extends Exception
 {
-    public static function modelIsNotValid(string $className)
+    /**
+     * @param string $className
+     * @return static
+     */
+    public static function modelIsNotValid($className)
     {
         return new static("The given model class `$className` does not extend `".Activity::class.'`');
     }
