@@ -3,6 +3,7 @@
 namespace Spatie\Activitylog\Traits;
 
 use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Spatie\Activitylog\ActivitylogServiceProvider;
 use Spatie\Activitylog\Models\Activity;
 
 trait CausesActivity
@@ -12,7 +13,7 @@ trait CausesActivity
      */
     public function activity()
     {
-        return $this->morphMany(Activity::class, 'causer');
+        return $this->morphMany(ActivitylogServiceProvider::getActivityModelClass(), 'causer');
     }
 
     /**

@@ -51,7 +51,7 @@ class ActivitylogServiceProvider extends ServiceProvider
      *
      * @return \Illuminate\Database\Eloquent\Model
      */
-    static public function determineActivityModel()
+    static public function getActivityModelClass()
     {
         $activityModel = config('laravel-activitylog.activity_model') != null ?
             config('laravel-activitylog.activity_model') :
@@ -66,7 +66,7 @@ class ActivitylogServiceProvider extends ServiceProvider
 
     static public function getActivityModelInstance()
     {
-        $activityModelClassName = self::determineActivityModel();
+        $activityModelClassName = self::getActivityModelClass();
 
         return new $activityModelClassName();
     }

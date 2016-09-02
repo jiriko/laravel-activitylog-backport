@@ -12,6 +12,17 @@ to
 composer require linearsoft/laravel-activitylog
 ```
 
+For your convenience the Activity facade infrastructure has been restored in this backport.
+All you need to do is register the facade:
+
+```php
+// config/app.php
+'aliases' => [
+    ...
+    'Activity' => Spatie\Activitylog\ActivitylogFacade::class,
+];
+```
+
 ### Testing
 
 All testing has been stripped from the backport version.
@@ -123,16 +134,6 @@ Next, you must install the service provider:
 'providers' => [
     ...
     Spatie\Activitylog\ActivitylogServiceProvider::class,
-];
-```
-
-And you must register the facade:
-
-```php
-// config/app.php
-'aliases' => [
-    ...
-    'Activity' => Spatie\Activitylog\ActivitylogFacade::class,
 ];
 ```
 
