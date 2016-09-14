@@ -9,7 +9,7 @@ composer require spatie/laravel-activitylog
 ```
 to
 ``` bash
-composer require linearsoft/laravel-activitylog
+composer require linearsoft/laravel-activitylog-backport
 ```
 
 For your convenience the Activity facade infrastructure has been restored in this backport.
